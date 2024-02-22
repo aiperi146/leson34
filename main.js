@@ -38,13 +38,15 @@ function mergeObjects() {
     }
 
     return result;
+
+ 
 }
 
 
 console.log(mergeObjects({type: 'bass', string: 4}, {type: 'ukulele'}));
 console.log(mergeObjects({name: 'John', age: 42}, {type: 'car', name: 'ferrari'}, {type: 'bike'}));
 console.log(mergeObjects());
-document.getElementById('inputField').addEventListener('input', function() {
+   document.getElementById('inputField').addEventListener('input', function() {
     const inputText = this.value;
     const itemsArray = inputText.split(',').map(item => item.trim()).filter(item => item !== '');
     const outputDiv = document.getElementById('outputDiv');
