@@ -60,3 +60,11 @@ document.getElementById('inputField').addEventListener('input', function() {
         outputDiv.appendChild(olElement);
     }
 });
+document.getElementById('outputDiv').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+        const clickedItem = event.target;
+        const olElement = clickedItem.parentNode;
+        olElement.removeChild(clickedItem);
+        olElement.insertBefore(clickedItem, olElement.firstChild);
+    }
+});
