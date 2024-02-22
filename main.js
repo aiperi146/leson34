@@ -20,3 +20,27 @@ function listItems(arr, number) {
 console.log(listItems(['этаж', 'вагон'], 3))
 
 
+function mergeObjects() {
+    const result = {};
+
+    for (const arg of arguments) {
+        
+        if (typeof arg === 'object' && arg !== null) {
+
+            for (const key in arg) {
+             
+                if (Object.prototype.hasOwnProperty.call(arg, key)) {
+                   
+                    result[key] = arg[key];
+                }
+            }
+        }
+    }
+
+    return result;
+}
+
+
+console.log(mergeObjects({type: 'bass', string: 4}, {type: 'ukulele'}));
+console.log(mergeObjects({name: 'John', age: 42}, {type: 'car', name: 'ferrari'}, {type: 'bike'}));
+console.log(mergeObjects());
